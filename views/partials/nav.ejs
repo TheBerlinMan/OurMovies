@@ -4,6 +4,14 @@
 </head>
 <body>
   <nav>
+    <!-- <button>New Movie</button> -->
+
+    <a 
+      href="/movies/new" class=<%= title === 'Add Movie' ? 'active' : '' %>
+    >
+      <button>Add Movie</button>
+    </a>
+
     <% if (user) { %>
       <a href="/auth/logout" class="right">
         <button type="submit">Logout</button>
