@@ -3,7 +3,8 @@ import { Movie } from "../models/movie.js";
 
 function newMovie(req,res){
   res.render('movies/new', {
-    title: 'Search Movie'
+    title: 'Search Movie',
+    movieData: null,
   })
 }
 

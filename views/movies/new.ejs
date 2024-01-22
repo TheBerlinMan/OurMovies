@@ -11,23 +11,18 @@
     <button type="submit">Search Movie</button>
   </form>
 
-<!-- 
-  <form id="new-form" action="/movies" method="POST">
-    <label for="title-input">Title:</label>
-    <input type="text" name="title" id="title-input">
-    <label for="release-year-input">Release Year:</label>
-    <input type="text" name="releaseYear" id="release-year-input">
-    <label for="mpaa-rating-select">MPAA Rating</label>
-    <select name="mpaaRating" id="mpaa-rating-select">
-      <option value="G">G</option>
-      <option value="PG">PG</option>
-      <option value="PG-13">PG-13</option>
-      <option value="R">R</option>
-    </select>
-    <label for="now-showing-checkbox">Now Showing:</label>
-    <input type="checkbox" name="nowShowing" checked id="now-showing-checkbox">
-    <button type="submit">Add Movie</button>
-  </form> -->
+
+  <% if (results) { %>
+   
+    <% results.forEach(result => { %>
+      <h1><%= result['original_title'] %></h1>
+      <p><%= result.id %></p>
+     
+    <% }) %>
+
+  <% } %>
+
+
 </main>
 
 <%- include("../partials/footer") %>

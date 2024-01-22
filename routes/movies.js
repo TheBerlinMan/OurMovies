@@ -13,6 +13,7 @@ router.get('/new', moviesCtrl.new)
 router.post('/', apiCtrl.searchMovie)
 
 
+
 export {
   router
 }
