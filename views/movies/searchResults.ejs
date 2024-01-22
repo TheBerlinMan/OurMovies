@@ -1,0 +1,30 @@
+<%- include('../partials/html-head') %>
+<link rel="stylesheet" href="/stylesheets/movies/searchResults.css" />
+<%- include('../partials/nav') %>
+
+<main>
+  <h1><%= title %></h1>
+  <a href="/movies/search">Go Back</a>
+  <% if (results) { %>
+    <% results.forEach(result => { %>
+      <div class="movieCard">
+        <div class="image">
+          <img src="https://image.tmdb.org/t/p/w154/<%= result['poster_path'] %>" alt="movie poster">
+        </div>
+        <div class="info">
+          <div class="movieDetails">
+            <h1><%= result['original_title'] %></h1>
+            <p>Released: <%= result['release_date'] %></p>
+          </div>
+          <div class="button">
+            <a href="/movies/<%= results.id %>"><button>Select</button></a>
+          </div>
+        </div>
+      </div>
+    <% }) %>
+  <% } %>
+
+
+</main>
+
+<%- include("../partials/footer") %>

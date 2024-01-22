@@ -1,0 +1,31 @@
+body{
+  display: flex;
+  flex-direction: column;
+}
+form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+h1{
+  margin: 20px 0 0 0;
+  padding: 0;
+}
+
+form > input {
+  width: 350px;
+}
+
+
+form * {
+  padding: 5px;
+  border-radius: 5px;
+  font-size: 20px;
+}
+
+form > button {
+  width: 160px;
+  font-size: 20px;
+}

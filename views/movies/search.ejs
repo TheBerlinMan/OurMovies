@@ -1,0 +1,20 @@
+<%- include('../partials/html-head') %>
+<link rel="stylesheet" href="/stylesheets/movies/search.css" />
+<%- include('../partials/nav') %>
+
+<main>
+  <h1><%= title %></h1>
+  <h2>Which movie would you like to add to your watched list?</h2>
+  <form action="/movies/searchResults" method="POST">
+    <input type="text" name="movieTitle" autocomplete="off" placeholder="The Wiggles Movie">
+    <button type="submit">Search Movie</button>
+  </form>
+
+
+  
+
+
+
+</main>
+
+<%- include("../partials/footer") %>
