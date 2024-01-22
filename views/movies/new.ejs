@@ -4,6 +4,14 @@
 
 <main>
   <h1><%= title %></h1>
+
+  <form action="/movies" method="POST">
+    <label for="title-input">Input Movie Title:</label>
+    <input type="text" name="movieTitle">
+    <button type="submit">Search Movie</button>
+  </form>
+
+<!-- 
   <form id="new-form" action="/movies" method="POST">
     <label for="title-input">Title:</label>
     <input type="text" name="title" id="title-input">
@@ -19,7 +27,7 @@
     <label for="now-showing-checkbox">Now Showing:</label>
     <input type="checkbox" name="nowShowing" checked id="now-showing-checkbox">
     <button type="submit">Add Movie</button>
-  </form>
+  </form> -->
 </main>
 
 <%- include("../partials/footer") %>
