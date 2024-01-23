@@ -3,10 +3,16 @@ import { Movie } from "../models/movie.js";
 
 function newForm(req, res){
   console.log(req.params.apiId);
-  res.render(`movies/new`, {
-    title: 'Selected Movie'
+  fetch(`https://api.themoviedb.org/3/movie/${req.params.apiId}?api_key=${process.env.TMDB_API_KEY}&append_to_response=credits`)
+  .then(apiResponse => {
+    apiResponse.json()
+    .then(specificMovieData => {
+      res.render(`movies/new`, {
+        specificMovieData: specificMovieData,
+        title: `${specificMovieData['original_title']}`
+      })
+    })
   })
-
 }
 
 
@@ -51,7 +57,7 @@ export{
 // i want to render a new form view     
 // then display the specific movie details from previous selection
 //    to do that I have to pass the movie Id (from the API) to run a new query
-//    new query: https://api.themoviedb.org/3/movie/{movie_id}?api_key=YOUR_API_KEY&append_to_response=credits
+//    new query: https://api.themoviedb.org/3/movie/${req.params.apiId}?api_key=${process.env.TMDB_API_KEY}&append_to_response=credits
 
 // ---
 
