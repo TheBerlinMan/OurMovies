@@ -17,7 +17,9 @@
             <p>Released: <%= result['release_date'] %></p>
           </div>
           <div class="button">
-            <a href="/movies/<%= results.id %>"><button>Select</button></a>
+            <form action="/movies/new/<%= result.id %>" method="GET">
+              <button type="submit">Select</button>
+            </form>
           </div>
         </div>
       </div>
