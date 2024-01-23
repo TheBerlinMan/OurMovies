@@ -3,6 +3,9 @@ import { Movie } from "../models/movie.js";
 
 function newForm(req, res){
   console.log(req.params.apiId);
+  res.render(`movies/new`, {
+    title: 'Selected Movie'
+  })
 
 }
 
