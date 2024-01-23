@@ -6,10 +6,10 @@ function newForm(req, res){
   fetch(`https://api.themoviedb.org/3/movie/${req.params.apiId}?api_key=${process.env.TMDB_API_KEY}&append_to_response=credits`)
   .then(apiResponse => {
     apiResponse.json()
-    .then(specificMovieData => {
+    .then(selectedMovieData => {
       res.render(`movies/new`, {
-        specificMovieData: specificMovieData,
-        title: `${specificMovieData['original_title']}`
+        selectedMovieData: selectedMovieData,
+        title: `${selectedMovieData['original_title']}`
       })
     })
   })
@@ -19,7 +19,6 @@ function newForm(req, res){
 function search(req,res){
   res.render('movies/search', {
     title: 'Search Movie',
-    movieData: null,
   })
 }
 
@@ -53,11 +52,11 @@ export{
 
 
 
-// now that i have the search results page:
-// i want to render a new form view     
-// then display the specific movie details from previous selection
-//    to do that I have to pass the movie Id (from the API) to run a new query
-//    new query: https://api.themoviedb.org/3/movie/${req.params.apiId}?api_key=${process.env.TMDB_API_KEY}&append_to_response=credits
+//// now that i have the search results page:
+//// i want to render a new form view     
+//// then display the selected movie details from previous selection
+////    to do that I have to pass the movie Id (from the API) to run a new query
+////    new query: https://api.themoviedb.org/3/movie/${req.params.apiId}?api_key=${process.env.TMDB_API_KEY}&append_to_response=credits
 
 // ---
 
