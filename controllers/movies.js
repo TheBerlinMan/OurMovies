@@ -55,6 +55,7 @@ async function create(req,res){
   const newMovie = await Movie.create({
     title: movieData['original_title'],
     releaseDate: movieData['release_date'],
+    plot: movieData.overview,
     genres: genres,
     directors: directors,
     performers: performers,
