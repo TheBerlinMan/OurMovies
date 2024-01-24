@@ -53,7 +53,7 @@ async function create(req,res){
     genres: [movieData.genres.name],
     directors: directors,
     performers: performers,
-    posterSmall: `https://image.tmdb.org/t/p/w92/${movieData['poster_path']}`,
+    posterSmall: `https://image.tmdb.org/t/p/w154/${movieData['poster_path']}`,
     posterLarge: `https://image.tmdb.org/t/p/w342/${movieData['poster_path']}`,
   })
 
@@ -91,6 +91,17 @@ function searchMovie(req,res){
   })
 }
 
+function deleteMovie(req, res){
+  Movie.findByIdAndDelete(req.params.movieId)
+  .then(movie => {
+    res.redirect('/movies')
+  })
+  .catch(error => {
+    console.log(error)
+    res.redirect('/movies')
+  })
+}
+
 
 
 
@@ -101,6 +112,7 @@ export{
   searchMovie,
   newForm as new,
   create,
+  deleteMovie as delete,
 }
 
 

@@ -14,6 +14,8 @@ router.post('/searchResults', moviesCtrl.searchMovie)
 
 router.post('/:apiId', moviesCtrl.create)
 
+router.delete('/:movieId', moviesCtrl.delete)
+
 
 
 
