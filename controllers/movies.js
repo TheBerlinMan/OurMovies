@@ -100,6 +100,17 @@ function deleteMovie(req, res){
 }
 
 function show(req, res){
+  Movie.findById(req.params.movieId)
+  .then(movie => {
+    res.render('movies/show', {
+      movie: movie,
+      title: 'Movie Details'
+    })
+  })
+  .catch(error => {
+    console.log(error)
+    res.redirect('/movies')
+  })
 
 }
 
