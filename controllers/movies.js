@@ -60,10 +60,7 @@ async function create(req,res){
   const loggedInUsersProfile = await Profile.findById(req.user.profile._id.toString())
   loggedInUsersProfile.watchedMovies.push(newMovie)
   await loggedInUsersProfile.save()
-  res.render('index', {
-    movieData,
-    title: 'Home Page'
-  })
+  res.redirect('/movies')
 }
 
 
