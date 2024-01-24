@@ -4,6 +4,8 @@ import * as moviesCtrl from '../controllers/movies.js'
 const router = Router()
 
 
+router.get('/', moviesCtrl.index)
+
 router.get('/new/:apiId', moviesCtrl.new)
 
 router.get('/search', moviesCtrl.search)

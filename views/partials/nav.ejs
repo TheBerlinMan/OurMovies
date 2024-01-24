@@ -12,6 +12,12 @@
       <button>Add Movie</button>
     </a>
 
+    <a 
+    href="/movies" class=<%= title === 'Movies List' ? 'active' : '' %>
+  >
+    <button>Movies List</button>
+  </a>
+
     <% if (user) { %>
       <a href="/auth/logout" class="right">
         <button type="submit">Logout</button>

@@ -2,6 +2,10 @@ import { Movie } from "../models/movie.js";
 import { Profile } from "../models/profile.js";
 
 
+function index(res, res){
+
+}
+
 function newForm(req, res){
   console.log(req.params.apiId);
   fetch(`https://api.themoviedb.org/3/movie/${req.params.apiId}?api_key=${process.env.TMDB_API_KEY}&append_to_response=credits`)
@@ -17,6 +21,7 @@ function newForm(req, res){
 }
 
 async function create(req,res){
+  // have to implement a check to see if data already exists in database
   const apiResponse = await fetch(`https://api.themoviedb.org/3/movie/${req.params.apiId}?api_key=${process.env.TMDB_API_KEY}&append_to_response=credits`)
   const movieData = await apiResponse.json()
 
@@ -46,7 +51,6 @@ async function create(req,res){
   res.render('index', {
     movieData,
     title: 'Home Page'
-
   })
 }
 
@@ -80,6 +84,7 @@ function searchMovie(req,res){
 
 
 export{
+  index,
   search,
   searchMovie,
   newForm as new,
