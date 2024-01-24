@@ -1,4 +1,5 @@
 import { Movie } from "../models/movie.js";
+import { Profile } from "../models/profile.js";
 
 
 function newForm(req, res){
@@ -13,6 +14,10 @@ function newForm(req, res){
       })
     })
   })
+}
+
+async function create(req,res){
+
 }
 
 
@@ -47,7 +52,8 @@ function searchMovie(req,res){
 export{
   search,
   searchMovie,
-  newForm
+  newForm as new,
+  create,
 }
 
 
@@ -60,6 +66,8 @@ export{
 
 // ---
 
-// have the results from the new query already populated 
+//// have the results from the new query already populated 
 // have a button to add a rating/score
+//    requires scoreSchema
 // save information to database & Movie's List 
+//    requires Movies Model 

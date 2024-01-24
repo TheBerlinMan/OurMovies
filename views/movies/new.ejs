@@ -5,9 +5,10 @@
 <main>
   <h1><%= title %></h1>
 
-  <form action="">
+  <form id="new-form" action="/movies/<%= selectedMovieData.id %>" method="POST">
     <div class="image">
       <img src="https://image.tmdb.org/t/p/w342/<%= selectedMovieData['poster_path'] %>" alt="movie poster">
+      <button type="submit">Add to Movies List</button>
     </div>
     <div class="info">
 
@@ -29,7 +30,7 @@
       </div>
 
       <div>
-        <label for="">Director:</label>
+        <label for="">Director(s):</label>
         
         <% selectedMovieData.credits.crew.forEach(element => { %>
           <% if (element.job === 'Director') { %>
@@ -40,7 +41,7 @@
       </div>
 
       <div>
-        <label for="">Actors:</label>
+        <label for="">Performer(s):</label>
         <% selectedMovieData.credits.cast.forEach(element => { %>
           <p class="item"><%= element.name %></p>
         <% }) %>
