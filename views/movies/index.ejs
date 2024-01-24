@@ -1,0 +1,39 @@
+<%- include('../partials/html-head') %>
+<link rel="stylesheet" href="/stylesheets/movies/index.css" />
+<%- include('../partials/nav') %>
+
+<main>
+  <h1>Movie List</h1>
+  <table id="list">
+    <thead>
+      <tr>
+        <th>Poster</th>
+        <th>Title</th>
+        <th>Release Year</th>
+        <th></th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% movies.forEach((movie) => { %>
+      <tr>
+
+        <td><img src="<%= movie.poster %>" alt=""></td>
+        <td><%= movie.title %></td>
+        <td><%= movie.releaseDate %></td>
+        <td><a href="/movies/<%= movie._id %>">DETAILS</a></td>
+        <td>
+          <form 
+            action="/movies/<%= movie._id %>?_method=DELETE"
+            method="POST"
+          >
+            <button type="submit">X</button>
+          </form>
+        </td>
+      </tr>
+      <% }) %>
+    </tbody>
+  </table>
+</main>
+
+<%- include('../partials/footer') %>
