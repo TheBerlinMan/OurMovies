@@ -2,8 +2,18 @@ import { Movie } from "../models/movie.js";
 import { Profile } from "../models/profile.js";
 
 
-function index(res, res){
-
+function index(req, res){
+  Movie.find({})
+  .then(movies => {
+    res.render('movies/index', {
+      movies: movies,
+      title: 'Movies List'
+    })
+  })
+  .catch(error => {
+    console.log(error)
+    res.redirect('/')
+  })
 }
 
 function newForm(req, res){
