@@ -5,48 +5,47 @@
 <main>
   <h1><%= title %></h1>
 
-  <form id="new-form" action="/movies/<%= selectedMovieData.id %>" method="POST">
+  <form action="">
     <div class="image">
-      <img src="https://image.tmdb.org/t/p/w342/<%= selectedMovieData['poster_path'] %>" alt="movie poster">
-      <button type="submit">Add to Movies List</button>
+      <img src="https://image.tmdb.org/t/p/w342/<%= movie.posterLarge %>" alt="movie poster">
     </div>
     <div class="info">
 
       <div>
         <label for="">Release Date:</label>
-        <p> <%= selectedMovieData['release_date'] %></p>
+        <p> <%= movie.releaseDate %></p>
       </div>
 
       <div>
         <label for="">Genre(s):</label>
-        <% selectedMovieData.genres.forEach(element => { %>
-          <p class="item"><%= element.name %></p>
+        <% movie.genres.forEach(element => { %>
+          <p class="item"><%= element %></p>
         <% }) %>
+       
       </div>
 
       <div>
         <label for="">Plot:</label>
-        <p><%= selectedMovieData.overview %></p>
+        <p></p>
       </div>
 
       <div>
         <label for="">Director(s):</label>
-        
-        <% selectedMovieData.credits.crew.forEach(element => { %>
-          <% if (element.job === 'Director') { %>
-            <p class="item"><%= element.name %></p>
-          <% } %>  
+        <% movie.directors.forEach(element => { %>
+          <p class="item"><%= element %></p>
         <% }) %>
+     
          
       </div>
 
       <div>
         <label for="">Performer(s):</label>
-        <% selectedMovieData.credits.cast.forEach(element => { %>
-          <p class="item"><%= element.name %></p>
+        <% movie.performers.forEach(element => { %>
+          <p class="item"><%= element %></p>
         <% }) %>
+     
       </div>
-
+      </form>
     </div>
 
 
@@ -59,7 +58,7 @@
 
 
 
-  </form>
+
 </main>
 
 <%- include("../partials/footer") %>
