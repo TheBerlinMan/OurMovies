@@ -53,7 +53,8 @@ async function create(req,res){
     genres: [movieData.genres.name],
     directors: directors,
     performers: performers,
-    poster: `https://image.tmdb.org/t/p/w92/${movieData['poster_path']}`,
+    posterSmall: `https://image.tmdb.org/t/p/w92/${movieData['poster_path']}`,
+    posterLarge: `https://image.tmdb.org/t/p/w342/${movieData['poster_path']}`,
   })
 
   const loggedInUsersProfile = await Profile.findById(req.user.profile._id.toString())
