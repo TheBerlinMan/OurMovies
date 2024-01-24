@@ -47,10 +47,15 @@ async function create(req,res){
     } 
   })
 
+  const genres = []
+  movieData.genres.forEach(element => {
+    genres.push(element.name)
+  })
+
   const newMovie = await Movie.create({
     title: movieData['original_title'],
     releaseDate: movieData['release_date'],
-    genres: [movieData.genres.name],
+    genres: genres,
     directors: directors,
     performers: performers,
     posterSmall: `https://image.tmdb.org/t/p/w154/${movieData['poster_path']}`,
