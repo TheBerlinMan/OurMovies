@@ -6,6 +6,8 @@ const router = Router()
 
 router.get('/', moviesCtrl.index)
 
+router.get('/:movieId', moviesCtrl.show)
+
 router.get('/new/:apiId', moviesCtrl.new)
 
 router.get('/search', moviesCtrl.search)

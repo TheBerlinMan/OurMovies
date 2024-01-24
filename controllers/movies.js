@@ -99,6 +99,10 @@ function deleteMovie(req, res){
   })
 }
 
+function show(req, res){
+
+}
+
 
 
 
@@ -110,20 +114,8 @@ export{
   newForm as new,
   create,
   deleteMovie as delete,
+  show
 }
 
 
 
-//// now that i have the search results page:
-//// i want to render a new form view     
-//// then display the selected movie details from previous selection
-////    to do that I have to pass the movie Id (from the API) to run a new query
-////    new query: https://api.themoviedb.org/3/movie/${req.params.apiId}?api_key=${process.env.TMDB_API_KEY}&append_to_response=credits
-
-// ---
-
-//// have the results from the new query already populated 
-// have a button to add a rating/score
-//    requires scoreSchema
-// save information to database & Movie's List 
-//    requires Movies Model 

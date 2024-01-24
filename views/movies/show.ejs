@@ -1,0 +1,65 @@
+<%- include('../partials/html-head') %>
+<link rel="stylesheet" href="/stylesheets/movies/new.css" />
+<%- include('../partials/nav') %>
+
+<main>
+  <h1><%= title %></h1>
+
+  <form id="new-form" action="/movies/<%= selectedMovieData.id %>" method="POST">
+    <div class="image">
+      <img src="https://image.tmdb.org/t/p/w342/<%= selectedMovieData['poster_path'] %>" alt="movie poster">
+      <button type="submit">Add to Movies List</button>
+    </div>
+    <div class="info">
+
+      <div>
+        <label for="">Release Date:</label>
+        <p> <%= selectedMovieData['release_date'] %></p>
+      </div>
+
+      <div>
+        <label for="">Genre(s):</label>
+        <% selectedMovieData.genres.forEach(element => { %>
+          <p class="item"><%= element.name %></p>
+        <% }) %>
+      </div>
+
+      <div>
+        <label for="">Plot:</label>
+        <p><%= selectedMovieData.overview %></p>
+      </div>
+
+      <div>
+        <label for="">Director(s):</label>
+        
+        <% selectedMovieData.credits.crew.forEach(element => { %>
+          <% if (element.job === 'Director') { %>
+            <p class="item"><%= element.name %></p>
+          <% } %>  
+        <% }) %>
+         
+      </div>
+
+      <div>
+        <label for="">Performer(s):</label>
+        <% selectedMovieData.credits.cast.forEach(element => { %>
+          <p class="item"><%= element.name %></p>
+        <% }) %>
+      </div>
+
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+  </form>
+</main>
+
+<%- include("../partials/footer") %>
