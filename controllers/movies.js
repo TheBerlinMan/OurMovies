@@ -17,7 +17,37 @@ function newForm(req, res){
 }
 
 async function create(req,res){
+  const apiResponse = await fetch(`https://api.themoviedb.org/3/movie/${req.params.apiId}?api_key=${process.env.TMDB_API_KEY}&append_to_response=credits`)
+  const movieData = await apiResponse.json()
 
+  const performers = []
+  movieData.credits.cast.forEach(element => {
+    performers.push(element.name)
+  })
+
+  const directors = []
+  movieData.credits.crew.forEach(element => {
+    if(element.job === 'Director'){
+      directors.push(element.name)
+    } 
+  })
+
+  const newMovie = await Movie.create({
+    title: movieData['original_title'],
+    releaseDate: movieData['release_date'],
+    genres: [movieData.genres.name],
+    directors: directors,
+    performers: performers,
+  })
+
+  const loggedInUsersProfile = await Profile.findById(req.user.profile._id.toString())
+  loggedInUsersProfile.watchedMovies.push(newMovie)
+  await loggedInUsersProfile.save()
+  res.render('index', {
+    movieData,
+    title: 'Home Page'
+
+  })
 }
 
 
