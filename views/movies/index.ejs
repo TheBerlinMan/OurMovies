@@ -3,47 +3,26 @@
 <%- include('../partials/nav') %>
 
 <main>
-  <h1>Our Watched Movies</h1>
-  <% movies.forEach(movie => { %>
-    <div class="movieCard">
-      <div class="image"><img src="<%= movie.posterSmall %>" alt=""></div>
-    </div>
-    <div class="info">
-      <p><%= movie.title %></p>
-      <p><%= movie.releaseDate.toLocaleDateString() %></p>
-      
-    </div>
-  <% }) %>
-  <table id="list">
-    <thead>
-      <tr>
-        <th>Poster</th>
-        <th>Title</th>
-        <th>Release Year</th>
-        <th></th>
-        <th></th>
-      </tr>
-    </thead>
-    <tbody>
-      <% movies.forEach((movie) => { %>
-      <tr>
-
-        <td><img src="<%= movie.posterSmall %>" alt=""></td>
-        <td><%= movie.title %></td>
-        <td><%= movie.releaseDate.toLocaleDateString() %></td>
-        <td><a href="/movies/<%= movie._id %>">DETAILS</a></td>
-        <td>
-          <form 
-            action="/movies/<%= movie._id %>?_method=DELETE"
-            method="POST"
-          >
-            <button type="submit">X</button>
-          </form>
-        </td>
-      </tr>
+  <h1>Watched Movies</h1>
+  <div class="movies">
+    <% movies.forEach(movie => { %>
+      <div class="movieCard">
+        <div class="image"><img src="<%= movie.posterSmall %>" alt=""></div>
+        <div class="info">
+          <div class="text">
+            <p><span>Title: </span><%= movie.title %></p>
+            <p><span>Released: </span><%= movie.releaseDate.toLocaleDateString() %></p>
+          </div>
+          <div class="actions">
+            <a href="/movies/<%= movie._id %>"><button>DETAILS</button></a>
+            <form action="/movies/<%= movie._id %>?_method=DELETE" method="POST">
+              <button type="submit">DELETE</button>
+            </form>
+          </div>
+        </div>
+      </div>
       <% }) %>
-    </tbody>
-  </table>
+  </div>
 </main>
 
 <%- include('../partials/footer') %>
