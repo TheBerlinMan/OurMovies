@@ -84,10 +84,6 @@ function search(req,res){
   res.render('movies/search', {
     title: 'Search Movie',
   })
-  .catch(error => {
-    console.log(error)
-    res.redirect('/')
-  })
 }
 
 
@@ -102,7 +98,6 @@ function searchMovie(req,res){
       console.log(movieData);
       res.render('movies/searchResults', {
         results: movieData.results,
-        title: 'Search Results',
       })
     })
     .catch(error => {
