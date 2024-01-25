@@ -121,7 +121,22 @@ function show(req, res){
 }
 
 function createReview(req, res){
-
+  Movie.findById(req.params.movieId)
+  .then(movie => {
+    movie.reviews.push(req.body)
+    movie.save()
+    .then(() => {
+      res.redirect(`/movies/${req.params.movieId}`)
+    })
+    .catch(error => {
+      console.log(error)
+      res.redirect('/movies')
+    })
+  })
+  .catch(error => {
+    console.log(error)
+    res.redirect('/movies')
+  })
 }
 
 
