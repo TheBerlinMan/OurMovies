@@ -36,8 +36,10 @@ p{
 }
 
 .item{
-  background-color: blue;
+  background-color: rgba(0, 0, 0,0.4);
   border: 1px solid;
+  padding: 3px 6px;
+  border-radius: 4px;
 }
 
 .reviewForm{

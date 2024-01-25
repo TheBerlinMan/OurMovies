@@ -5,13 +5,19 @@
 <main>
   <h1><%= title %></h1>
 
-  <form id="new-form" action="/movies/<%= selectedMovieData.id %>" method="POST">
+  <div class="container">
+
     <div class="image">
       <img src="https://image.tmdb.org/t/p/w342/<%= selectedMovieData['poster_path'] %>" alt="movie poster">
-      <button type="submit">Add to Movies List</button>
+      <form id="" action="/movies/<%= selectedMovieData.id %>" method="POST">
+        <button type="submit">Add to Watched</button>
+      </form>
+      <form id="" action="" method="POST">
+        <button type="submit">Add to To Watch</button>
+      </form>
     </div>
-    <div class="info">
 
+    <div class="info">
       <div>
         <label for="">Release Date:</label>
         <p> <%= selectedMovieData['release_date'] %></p>
@@ -37,7 +43,7 @@
             <p class="item"><%= element.name %></p>
           <% } %>  
         <% }) %>
-         
+          
       </div>
 
       <div>
@@ -48,18 +54,7 @@
       </div>
 
     </div>
-
-
-
-
-
-
-
-
-
-
-
-  </form>
+  </div>
 </main>
 
 <%- include("../partials/footer") %>

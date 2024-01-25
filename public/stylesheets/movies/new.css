@@ -1,26 +1,33 @@
-form {
+main {
   display: flex;
   font-size: 20px;
-  padding: 0 60px;
+  margin: 0 60px;
+}
+
+.container{
+  display: flex;
+  gap: 32px;
+}
+
+.image{
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
+  align-items: center;
+  gap: 16px;
+  
 }
 
 p{
   margin: 0;
   padding: 0;
-
 }
 
-form * {
-  padding: 5px;
-  border-radius: 5px;
-  font-size: 20px;
-}
 
-form > button {
-  grid-column: span 2;
-  width: 160px;
-  margin-left: auto;
-  font-size: 22px;
+.info{
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
 }
 
 .info > div{
@@ -36,6 +43,30 @@ form > button {
 }
 
 .item{
-  background-color: blue;
+  background-color: rgba(0, 0, 0,0.4);
   border: 1px solid;
+  padding: 3px 6px;
+  border-radius: 4px;
+}
+
+button{
+  padding: 8px 16px;
+  font-size: 20px;
+  border-radius: 8px;
+  background-color: #cd68df;
+  color: white;
+  border: 1px solid white;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+button:hover {
+  padding: 8px 16px;
+  font-size: 20px;
+  border-radius: 8px;
+  background-color: white;
+  color: #cd68df;
+  border: 1px solid white;
+  cursor: pointer;
+  font-weight: 600;
 }
