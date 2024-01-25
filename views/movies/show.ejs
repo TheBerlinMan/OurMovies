@@ -31,6 +31,16 @@
         <!-- <div class="line"></div> -->
         <button>Submit</button>
       </form>
+      <h3>Reviews</h3>
+      <% if (movie.reviews.length) { %>
+        <% movie.reviews.forEach(review => { %>     
+          <p>Posted: <%= review.createdAt.toLocaleString() %></p>
+          <p>Watched: <%= review.originalViewing.toLocaleString() %></p>
+          <p>Score: <%= review.rating %></p>
+        <% }) %>
+      <% } else { %>
+        <h3>No Reviews Yet</h3>
+      <% } %>
     </div>
 
     <div class="info">
