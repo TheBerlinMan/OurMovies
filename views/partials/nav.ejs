@@ -4,8 +4,7 @@
 </head>
 <body>
   <nav>
-    <!-- <button>New Movie</button> -->
-
+   
     <a 
       href="/movies/search" class=<%= title === 'Add Movie' ? 'active' : '' %>
     >
@@ -14,9 +13,15 @@
 
     <a 
     href="/movies" class=<%= title === 'Movies List' ? 'active' : '' %>
-  >
+    >
     <button>Movies List</button>
-  </a>
+    </a>
+    
+    <a 
+    href="/" class=<%= title === 'Movies List' ? 'active' : '' %>
+    >
+    <button>Home</button>
+    </a>
 
     <% if (user) { %>
       <a href="/auth/logout" class="right">

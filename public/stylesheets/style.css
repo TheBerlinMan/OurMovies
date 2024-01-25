@@ -12,7 +12,7 @@ html {
 }
 
 body {
-  background-color: #1a1a1a;
+  background-color: rgb(69, 69, 69);
   color: #f6f6f6;
   /* Use a system font, if none are available use any found sans-sarif font */
   font-family: system-ui, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 
@@ -21,12 +21,29 @@ body {
 }
 
 nav {
-  background-color: #f6f6f6;
+  background-color: rgba(0, 0, 0, 0.4);
   color: #1a1a1a;
   display: flex;
   align-items: center;
   padding: 10px;
   min-height: 60px;
+  gap: 24px;
+}
+
+nav > a > button{
+  padding: 8px;
+  background-color: #454545;
+  color: white;
+  border-radius: 8px;
+  border: 1px solid white;
+}
+nav > a > button:hover{
+  cursor: pointer;
+  padding: 8px;
+  background-color: white;
+  color: black;
+  border-radius: 8px;
+  border: 1px solid white;
 }
 
 main {
@@ -38,4 +55,46 @@ main {
 
 .right {
   margin-left: auto;
+}
+
+.titleCard{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: black;
+  padding: 30px;
+}
+
+.titleCard > h2{
+  margin: 0;
+  padding: 0;
+}
+
+footer{
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
+  align-items: center;
+  gap: 28px;
+  background-color: rgba(0, 0, 0, 0.4);
+  padding: 30px;
+  text-align: center;
+}
+
+footer > div{
+  padding-top: 16px;
+  display: flex;
+  gap: 8px;
+  
+}
+
+footer > p{
+  padding: 0;
+  margin: 0;
+}
+
+footer > p > a, footer > div > a{
+  color: white;  
 }

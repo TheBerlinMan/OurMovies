@@ -2,15 +2,11 @@
 <%- include('./partials/nav') %>
 
 <main>
-  <h1>hello, <%= user ? user.profile.name : "friend" %></h1>
-  <% if (user?.profile.avatar) { %>
-    <div>
-      <img
-        src="<%= user.profile.avatar %>"
-        alt="<%= user.profile.name %> avatar"
-      />
-    </div>
-  <% } %>
+  <div class="titleCard">
+    <h1>Welcome to OurMovies.</h1>
+    <h2>Track films you've watched.</h2>
+    <h2>Save those you want to see.</h2>
+  </div>
 </main>
 
 <%- include('./partials/footer') %>
