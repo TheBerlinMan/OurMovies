@@ -5,7 +5,7 @@ const Schema = mongoose.Schema
 const reviewSchema = new Schema({
   originalViewing: Date,
   rating: {type: Number, min: 1, max: 5, default: 0},
-  postedBy: [{type: Schema.Types.ObjectId, ref: 'Profile'}]
+  postedBy: {type: Schema.Types.ObjectId, ref: 'Profile'}
 },{
   timestamps:true
 })
@@ -20,7 +20,8 @@ const movieSchema = new Schema({
   performers: [String],
   posterSmall: String,
   posterLarge: String,
-  reviews: [reviewSchema]
+  reviews: [reviewSchema],
+  postedBy: {type: Schema.Types.ObjectId, ref: 'Profile'}
 }, {
   timestamps: true
 })

@@ -27,6 +27,14 @@ function newForm(req, res){
         title: `${selectedMovieData['original_title']}`
       })
     })
+    .catch(error => {
+      console.log(error)
+      res.redirect('/')
+    })
+  })
+  .catch(error => {
+    console.log(error)
+    res.redirect('/')
   })
 }
 
@@ -52,6 +60,7 @@ async function create(req,res){
     genres.push(element.name)
   })
 
+  
   const newMovie = await Movie.create({
     title: movieData['original_title'],
     releaseDate: movieData['release_date'],
@@ -61,9 +70,10 @@ async function create(req,res){
     performers: performers,
     posterSmall: `https://image.tmdb.org/t/p/w154/${movieData['poster_path']}`,
     posterLarge: `https://image.tmdb.org/t/p/w342/${movieData['poster_path']}`,
+    postedBy: req.user.profile._id
   })
 
-  const loggedInUsersProfile = await Profile.findById(req.user.profile._id.toString())
+  const loggedInUsersProfile = await Profile.findById(req.user.profile._id)
   loggedInUsersProfile.watchedMovies.push(newMovie)
   await loggedInUsersProfile.save()
   res.redirect('/movies')
@@ -73,6 +83,10 @@ async function create(req,res){
 function search(req,res){
   res.render('movies/search', {
     title: 'Search Movie',
+  })
+  .catch(error => {
+    console.log(error)
+    res.redirect('/')
   })
 }
 
@@ -91,6 +105,14 @@ function searchMovie(req,res){
         title: 'Search Results',
       })
     })
+    .catch(error => {
+      console.log(error)
+      res.redirect('/')
+    })
+  })
+  .catch(error => {
+    console.log(error)
+    res.redirect('/')
   })
 }
 

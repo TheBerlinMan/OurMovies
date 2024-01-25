@@ -4,6 +4,9 @@
 
 <main>
   <h1>Watched Movies</h1>
+  <% if (user) { %>
+   
+  
   <div class="movies">
     <% movies.forEach(movie => { %>
       <div class="movieCard">
@@ -15,14 +18,24 @@
           </div>
           <div class="actions">
             <a href="/movies/<%= movie._id %>"><button>DETAILS</button></a>
-            <form action="/movies/<%= movie._id %>?_method=DELETE" method="POST">
-              <button type="submit">DELETE</button>
-            </form>
+
+
+            <% if (movie.postedBy.equals(user?.profile._id)) { %>
+             
+              
+              <form action="/movies/<%= movie._id %>?_method=DELETE" method="POST">
+                <button type="submit">DELETE</button>
+              </form>
+              
+              
+            <% } %>
+
           </div>
         </div>
       </div>
       <% }) %>
   </div>
+  <% } %>
 </main>
 
 <%- include('../partials/footer') %>

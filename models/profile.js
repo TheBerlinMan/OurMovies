@@ -1,5 +1,4 @@
 import mongoose from 'mongoose'
-import { Movie } from '../models/movie.js'
 
 const Schema = mongoose.Schema
 
