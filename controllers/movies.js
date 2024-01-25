@@ -120,6 +120,10 @@ function show(req, res){
 
 }
 
+function createReview(req, res){
+
+}
+
 
 
 
@@ -131,7 +135,8 @@ export{
   newForm as new,
   create,
   deleteMovie as delete,
-  show
+  show,
+  createReview
 }
 
 

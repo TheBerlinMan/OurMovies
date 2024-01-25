@@ -9,8 +9,9 @@
 
     <div class="image">
       <img src="https://image.tmdb.org/t/p/w342/<%= movie.posterLarge %>" alt="movie poster">
-      <form class="reviewForm" action="">
+      <form class="reviewForm" action="/movies/<%= movie.id %>/reviews" id="add-review-form" method="POST">
         <h3>Leave Review</h3>
+        <!-- <div class="line"></div> -->
         <label for="original-viewing">Original Viewing</label>
         <input type="date" name="original-viewing" id="original-viewing">
         <label for="rating-select">Rating:</label>
@@ -27,6 +28,7 @@
           <option value="4.5">4.5</option>
           <option value="5">5</option>
         </select>
+        <!-- <div class="line"></div> -->
         <button>Submit</button>
       </form>
     </div>

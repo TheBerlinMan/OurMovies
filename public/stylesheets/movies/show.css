@@ -43,4 +43,14 @@ p{
 .reviewForm{
   display: flex;
   flex-direction: column;
+  gap: 8px;
 }
+
+.reviewForm > h3 {
+  margin: 0;
+  padding: 0;
+}
+
+/* .reviewForm > .line{
+  border-bottom: 0.5px white solid;
+} */
