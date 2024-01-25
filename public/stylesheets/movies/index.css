@@ -33,3 +33,12 @@ table td {
 #list a:hover {
   background-color: white;
 }
+
+.movieCard > .info{
+  display: flex;
+  flex-direction: row;
+}
+
+/* main{
+  background-color: white;
+} */

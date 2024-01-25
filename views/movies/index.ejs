@@ -3,7 +3,17 @@
 <%- include('../partials/nav') %>
 
 <main>
-  <h1>Movie List</h1>
+  <h1>Our Watched Movies</h1>
+  <% movies.forEach(movie => { %>
+    <div class="movieCard">
+      <div class="image"><img src="<%= movie.posterSmall %>" alt=""></div>
+    </div>
+    <div class="info">
+      <p><%= movie.title %></p>
+      <p><%= movie.releaseDate.toLocaleDateString() %></p>
+      
+    </div>
+  <% }) %>
   <table id="list">
     <thead>
       <tr>
@@ -20,7 +30,7 @@
 
         <td><img src="<%= movie.posterSmall %>" alt=""></td>
         <td><%= movie.title %></td>
-        <td><%= movie.releaseDate %></td>
+        <td><%= movie.releaseDate.toLocaleDateString() %></td>
         <td><a href="/movies/<%= movie._id %>">DETAILS</a></td>
         <td>
           <form 

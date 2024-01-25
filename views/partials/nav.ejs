@@ -4,24 +4,30 @@
 </head>
 <body>
   <nav>
-   
-    <a 
-      href="/movies/search" class=<%= title === 'Add Movie' ? 'active' : '' %>
-    >
-      <button>Add Movie</button>
+
+    <a href="/" class="logo">
+    OurMovies
     </a>
 
     <a 
-    href="/movies" class=<%= title === 'Movies List' ? 'active' : '' %>
+      href="/movies/search" class=""
     >
-    <button>Movies List</button>
+      <button>Add</button>
+    </a>
+
+    <a 
+    href="/movies" class=""
+    >
+    <button>Watched</button>
+    </a>
+
+    <a 
+    href="/movies" class=""
+    >
+    <button>To Watch</button>
     </a>
     
-    <a 
-    href="/" class=<%= title === 'Movies List' ? 'active' : '' %>
-    >
-    <button>Home</button>
-    </a>
+    
 
     <% if (user) { %>
       <a href="/auth/logout" class="right">

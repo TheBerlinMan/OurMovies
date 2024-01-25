@@ -3,9 +3,19 @@
 
 <main>
   <div class="titleCard">
-    <h1>Welcome to OurMovies.</h1>
-    <h2>Track films you've watched.</h2>
-    <h2>Save those you want to see.</h2>
+    <h1>Welcome to <span>OurMovies</span>.</h1>
+    <h2>See the films we've watched and the ones we want to see.</h2>
+    <br>
+    <hr>
+    <br>
+    <h3>Get Started:</h3>
+    <h3>Search for a movie and add it to a list.</h3>
+    <br>
+    <a 
+    href="/movies/search" class=<%= title === 'Add Movie' ? 'active' : '' %>
+    >
+    <button>Let's Go!</button>
+  </a>
   </div>
 </main>
 
