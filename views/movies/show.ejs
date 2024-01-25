@@ -1,19 +1,41 @@
 <%- include('../partials/html-head') %>
-<link rel="stylesheet" href="/stylesheets/movies/new.css" />
+<link rel="stylesheet" href="/stylesheets/movies/show.css" />
 <%- include('../partials/nav') %>
 
 <main>
-  <h1><%= title %></h1>
+  <h1><%= movie.title %></h1>
 
-  <form action="">
+  <div class="main">
+
     <div class="image">
       <img src="https://image.tmdb.org/t/p/w342/<%= movie.posterLarge %>" alt="movie poster">
+      <form class="reviewForm" action="">
+        <h3>Leave Review</h3>
+        <label for="original-viewing">Original Viewing</label>
+        <input type="date" name="original-viewing" id="original-viewing">
+        <label for="rating-select">Rating:</label>
+        <select name="rating" id="rating-select">
+          <option value="0">0</option>
+          <option value="0.5">0.5</option>
+          <option value="1">1</option>
+          <option value="1.5">1.5</option>
+          <option value="2">2</option>
+          <option value="2.5">2.5</option>
+          <option value="3">3</option>
+          <option value="3.5">3.5</option>
+          <option value="4">4</option>
+          <option value="4.5">4.5</option>
+          <option value="5">5</option>
+        </select>
+        <button>Submit</button>
+      </form>
     </div>
+
     <div class="info">
 
       <div>
         <label for="">Release Date:</label>
-        <p> <%= movie.releaseDate %></p>
+        <p> <%= movie.releaseDate.toLocaleString() %></p>
       </div>
 
       <div>
@@ -21,12 +43,11 @@
         <% movie.genres.forEach(element => { %>
           <p class="item"><%= element %></p>
         <% }) %>
-       
       </div>
 
       <div>
         <label for="">Plot:</label>
-        <p></p>
+        <p><%= movie.plot %></p>
       </div>
 
       <div>
@@ -34,8 +55,6 @@
         <% movie.directors.forEach(element => { %>
           <p class="item"><%= element %></p>
         <% }) %>
-     
-         
       </div>
 
       <div>
@@ -43,10 +62,10 @@
         <% movie.performers.forEach(element => { %>
           <p class="item"><%= element %></p>
         <% }) %>
-     
       </div>
-      </form>
+
     </div>
+  </div>
 
 
 

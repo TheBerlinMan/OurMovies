@@ -1,56 +1,46 @@
-ul {
-  margin: 0 0 16px;
+.main {
+  display: flex;
+  font-size: 20px;
+  padding: 0 60px;
+}
+
+p{
+  margin: 0;
   padding: 0;
-  list-style: none;
+
 }
 
-li {
-  font-weight: bold;
-}
-
-table {
+.main * {
+  padding: 5px;
+  border-radius: 5px;
   font-size: 20px;
 }
 
-table thead th {
-  padding: 5px;
-  border-bottom: 2px solid #424748;
-}
-
-table td {
-  padding: 10px;
-  text-align: center;
-}
-
-form * {
-  padding: 5px;
-  border-radius: 5px;
-}
-
-section {
-  display: grid;
-  grid-template-columns: auto auto;
-  grid-gap: 16px;
-}
-
-section div:nth-child(even) {
-  font-weight: bold;
-}
-
-#add-review-form {
-  display: grid;
-  grid-template-columns: auto auto;
-  grid-gap: 16px;
-  margin-bottom: 20px;
-}
-
-#add-review-form > textarea {
-  width: 250px;
-}
-
-#add-review-form > button {
-  font-size: 16px;
+.main > button {
+  grid-column: span 2;
   width: 160px;
-  grid-column: 2 / 3;
-  margin-bottom: 24px;
+  margin-left: auto;
+  font-size: 22px;
+}
+
+.info > div{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.info > div > label{
+  /* width: 200px; */
+  font-weight: 700;
+  
+}
+
+.item{
+  background-color: blue;
+  border: 1px solid;
+}
+
+.reviewForm{
+  display: flex;
+  flex-direction: column;
 }
