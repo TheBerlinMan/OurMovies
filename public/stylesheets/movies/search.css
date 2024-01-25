@@ -1,7 +1,17 @@
-body{
+main{
   display: flex;
   flex-direction: column;
 }
+
+.searchCard{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  /* height: 50vh; */
+  /* background-color: black; */
+}
+
 form {
   display: flex;
   justify-content: center;
@@ -9,23 +19,31 @@ form {
   gap: 20px;
 }
 
-h1{
-  margin: 20px 0 0 0;
-  padding: 0;
-}
-
-form > input {
+input{
   width: 350px;
-}
-
-
-form * {
-  padding: 5px;
-  border-radius: 5px;
   font-size: 20px;
+  padding: 8px 8px;
+  border-radius: 8px;
 }
 
 form > button {
-  width: 160px;
+  padding: 8px 16px;
   font-size: 20px;
+  border-radius: 8px;
+  background-color: #cd68df;
+  color: white;
+  border: 1px solid white;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+form > button:hover {
+  padding: 8px 16px;
+  font-size: 20px;
+  border-radius: 8px;
+  background-color: white;
+  color: #cd68df;
+  border: 1px solid white;
+  cursor: pointer;
+  font-weight: 600;
 }

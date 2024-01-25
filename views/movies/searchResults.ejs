@@ -3,8 +3,7 @@
 <%- include('../partials/nav') %>
 
 <main>
-  <h1><%= title %></h1>
-  <a href="/movies/search">Go Back</a>
+  <h1>Search Results</h1>
   <% if (results) { %>
     <% results.forEach(result => { %>
       <div class="movieCard">
@@ -14,7 +13,7 @@
         <div class="info">
           <div class="movieDetails">
             <h1><%= result['original_title'] %></h1>
-            <p>Released: <%= result['release_date'] %></p>
+            <p><span>Released:</span> <%= result['release_date'] %></p>
           </div>
           <div class="button">
             <form action="/movies/new/<%= result.id %>" method="GET">
