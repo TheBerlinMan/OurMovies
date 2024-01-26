@@ -70,3 +70,10 @@ button:hover {
   cursor: pointer;
   font-weight: 600;
 }
+
+.actions{
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  flex-grow: 2;
+}

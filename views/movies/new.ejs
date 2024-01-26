@@ -8,13 +8,17 @@
   <div class="container">
 
     <div class="image">
-      <img src="https://image.tmdb.org/t/p/w342/<%= selectedMovieData['poster_path'] %>" alt="movie poster">
-      <form id="" action="/movies/<%= selectedMovieData.id %>" method="POST">
-        <button type="submit">Add to Watched</button>
-      </form>
-      <form id="" action="" method="POST">
-        <button type="submit">Add to To Watch</button>
-      </form>
+      <div>
+        <img src="https://image.tmdb.org/t/p/w342/<%= selectedMovieData['poster_path'] %>" alt="movie poster">
+      </div>
+      <div class="actions">
+        <form id="" action="/movies/<%= selectedMovieData.id %>" method="POST">
+          <button type="submit">Add to Watched</button>
+        </form>
+        <form id="" action="" method="POST">
+          <button type="submit">Add to To Watch</button>
+        </form>
+      </div>
     </div>
 
     <div class="info">
