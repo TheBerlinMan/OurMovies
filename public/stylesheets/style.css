@@ -49,6 +49,7 @@ nav > a > button:hover{
   color: black;
   border-radius: 8px;
   border: 1px solid white;
+  font-size: 16px;
 }
 
 main {
