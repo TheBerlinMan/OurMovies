@@ -7,6 +7,7 @@ OurMovies is a movie tracking application where a user can log movies they've se
 I chose to build this application for my Unit 2 project so that my partner and I could have a way to log the movies we will watch together throughout 2024. Additionally, I was very interested in practicing with API's and Data. 
 
 [View the applicaton here.](https://ourmovies.fly.dev/)
+
 [View my planning materials here.](https://trello.com/b/uIT2NDQw/moovie)
 
 #### Tech Used:
@@ -28,6 +29,9 @@ This application would not have been possible without the data provided by [TheM
 #### Icebox:
 
 -[] Edit / Delete Reviews
+
 -[] Track movies watched by month
+
 -[] Build 'To Watch' routing
+
 -[] Build filter capabilities to filter by Performer, Director, Genre, and Rating
