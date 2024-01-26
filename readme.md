@@ -1,6 +1,6 @@
 # OurMovies
 
-![Alt text](<OurMovies Screengrab.png>)
+![Alt text](</public/OurMovies Screengrab.png>)
 
 OurMovies is a movie tracking application where a user can log movies they've seen and/or movies they've yet to see. Addtionally, the user will be able to log their reviews of movies they've seen. This application is connected to [TheMovieDatabase](https://www.themoviedb.org/?language=en-US) via an API. This way, the user does not have to manually add the information regarding their movie selections which allows for a more seemless experience. 
 
