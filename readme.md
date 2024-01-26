@@ -22,7 +22,7 @@ I chose to build this application for my Unit 2 project so that my partner and I
 ![Postman](https://img.shields.io/badge/Postman-FF6C37?style=for-the-badge&logo=postman&logoColor=white)
 ![Google Drive](https://img.shields.io/badge/Google%20Drive-4285F4?style=for-the-badge&logo=googledrive&logoColor=white)
 
-### Attributions
+### Attributions:
 
 This application would not have been possible without the data provided by [TheMovieDatabase](https://www.themoviedb.org/?language=en-US)'s API.
 
