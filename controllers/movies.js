@@ -83,7 +83,6 @@ function searchMovie(req,res){
   .then(apiResponse => {
     apiResponse.json()
     .then(movieData => {
-      console.log(movieData);
       res.render('movies/searchResults', {
         results: movieData.results,
         title: 'Movies'
