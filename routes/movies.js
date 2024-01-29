@@ -5,9 +5,9 @@ import { isLoggedIn } from "../middleware/middleware.js";
 const router = Router()
 
 
-router.get('/', moviesCtrl.index)
+router.get('/', isLoggedIn, moviesCtrl.index)
 
-router.get('/search', moviesCtrl.search)
+router.get('/search', isLoggedIn, moviesCtrl.search)
 
 router.get('/:movieId', moviesCtrl.show)
 
